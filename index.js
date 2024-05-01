@@ -345,7 +345,21 @@ const data = {
   ],
 };
 
-function getPlanetNames(data) {
-  console.log();
-}
-getPlanetNames(data);
+// function allPlanetsMoonsCount(data) {
+//   let planets = data.planets.reduce((acc, value) => {
+//     if (value.moons != undefined) {
+//       return (acc += value.moonsCount);
+//     } else {
+//       return acc;
+//     }
+//   }, 0);
+
+//   console.log(planets);
+// }
+
+// allPlanetsMoonsCount(data);
+
+// const maxYear = Object.entries(obj).reduce(
+//   (max, [year, count]) => (count > max.count ? { year, count } : max),
+//   { year: null, count: -Infinity }
+// );

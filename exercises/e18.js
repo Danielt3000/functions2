@@ -4,10 +4,21 @@
  * Return example: 1902
  */
 
+import { maxBy } from "./e17";
+
 export function getGreatestDiscoveryYear(data) {
-  // Your code goes here...
-  // feel free to import your `maxBy` or `minBy` methods from previous lessons
+  let obj = data.asteroids.reduce((ac, year) => {
+    let years = year.discoveryYear;
+
+    ac[years] = (ac[years] || 0) + 1;
+    return ac;
+  }, {});
+
+  let maxYear = maxBy(Object.keys(obj), (key) => obj[key]);
+  return Number(maxYear);
 }
+
+// discoveryYear
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-18"

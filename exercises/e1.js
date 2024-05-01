@@ -5,9 +5,10 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetNames(data) {
-  let obj = [];
-  data.planets.filter((value) => {
-    obj.push(value.name);
-  });
-  return obj;
+  let names = data.planets.reduce((acc, value) => {
+    acc.push(value.name);
+    return acc;
+  }, []);
+
+  return names;
 }
